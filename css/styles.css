@@ -73,6 +73,12 @@ img {
   color: var(--color-iris);
 }
 
+@media only screen and (min-width: 768px) {
+  .top-logo {
+    margin-right: 120px;
+  }
+}
+
 @media only screen and (min-width: 1158px) {
   .top-logo {
     margin-right: 76px;
@@ -162,76 +168,94 @@ img {
   align-items: center;
 }
 
-.navigation,
-.address {
+.navigation {
   display: flex;
   align-items: center;
 }
 
+/* Phone Styles */
+
 .address {
-  font-style: normal;
-  margin-left: auto;
+  display: none;
+}
+.menu-nav {
+  display: none;
 }
 
-@media only screen and (max-width: 767px) {
+/* Tablet Styles */
+
+@media only screen and (min-width: 768px) {
   .address {
-    display: none;
+    display: flex;
+    align-items: center;
+    font-style: normal;
+    margin-left: auto;
   }
-}
-
-.menu-nav,
-.adr {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-@media only screen and (max-width: 767px) {
   .menu-nav {
-    display: none;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .adr-item {
+    padding: 6px;
+  }
+
+  .adr.link {
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--color-slate);
+  }
+
+  .nav.link {
+    position: relative;
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav.link:hover,
+  .nav.link:focus,
+  .adr.link:hover,
+  .adr.link:focus {
+    color: var(--color-ocean);
+  }
+
+  .nav.link::after {
+    content: " ";
+
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+  }
+  .nav.link.current {
+    color: var(--color-ocean);
+  }
+
+  .nav.link.current::after {
+    background-color: var(--color-ocean);
   }
 }
 
-.adr.link {
-  font-weight: 400;
-  color: var(--color-slate);
-}
+/* Desktop Styles */
+@media only screen and (min-width: 1158px) {
+  .menu-nav,
+  .adr {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
 
-.nav.link,
-.adr.link {
-  position: relative;
-  padding-top: 24px;
-  padding-bottom: 24px;
-
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.nav.link:hover,
-.nav.link:focus,
-.adr.link:hover,
-.adr.link:focus {
-  color: var(--color-ocean);
-}
-
-.nav.link::after {
-  content: " ";
-
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-
-  display: block;
-
-  width: 100%;
-  height: 4px;
-  border-radius: 2px;
-}
-.nav.link.current {
-  color: var(--color-ocean);
-}
-
-.nav.link.current::after {
-  background-color: var(--color-ocean);
+  .adr.link {
+    font-size: 16px;
+  }
 }
 
 /**
@@ -396,6 +420,8 @@ img {
 
 /* Hero Section */
 
+/* Phone Style & > */
+
 .hero-section {
   max-width: 1440px;
   margin-left: auto;
@@ -410,22 +436,54 @@ img {
   background-position: center;
   background-size: cover;
 
-  padding-top: 188px;
-  padding-bottom: 188px;
+  padding-top: 112px;
+  padding-bottom: 112px;
 }
 
+@media only screen and (min-width: 1158px) {
+  .hero-section {
+    padding-top: 188px;
+    padding-bottom: 188px;
+  }
+}
+
+/* Phone Styles */
+
 .hero-title {
-  max-width: 496px;
+  max-width: 320px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 48px;
+  margin-bottom: 72px;
 
   font-weight: 700;
-  font-size: 56px;
-  line-height: 1.07;
+  font-size: 36px;
+  line-height: 1.11;
   letter-spacing: 0.02em;
   text-align: center;
   color: var(--color-white);
+}
+
+/* Tablet Styles */
+
+@media only screen and (min-width: 768px) {
+  .hero-title {
+    max-width: 496px;
+    margin-bottom: 36px;
+
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1.07;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: var(--color-white);
+  }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 1158px) {
+  .hero-title {
+    margin-bottom: 48px;
+  }
 }
 
 .hero-btn {
@@ -491,6 +549,12 @@ img {
     0px 2px 1px rgba(0, 0, 0, 0.2);
 
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media only screen and (max-width: 767px) {
+  .modal {
+    width: 392px;
+  }
 }
 
 .backdrop.is-hidden {
@@ -762,8 +826,16 @@ img {
 }
 
 .examples-section {
-  padding-bottom: 120px;
+  display: none;
 }
+
+@media only screen and (min-width: 1158px) {
+  .examples-section {
+    display: block;
+    padding-bottom: 120px;
+  }
+}
+
 /* Section 3 -  Our team */
 
 .li-title {
