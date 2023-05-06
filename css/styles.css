@@ -95,8 +95,15 @@ img {
 
   color: var(--color-iris);
 
-  display: inline-block;
+  display: block;
+  text-align: center;
   margin-bottom: 16px;
+}
+
+@media only screen and (min-width: 768px) {
+  .bottom-logo {
+    display: inline-block;
+  }
 }
 
 .logo-head {
@@ -276,8 +283,28 @@ img {
 
 .footer-container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-  align-items: baseline;
+@media only screen and (min-width: 768px) {
+  .footer-container {
+    justify-content: flex-start;
+    align-items: baseline;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1157px) {
+  .footer-container {
+    padding-left: 108px;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .footer-container {
+    display: flex;
+    align-items: baseline;
+  }
 }
 
 .text-foot {
@@ -292,16 +319,37 @@ img {
 }
 
 .logo-container {
-  margin-right: 120px;
+  margin-bottom: 72px;
+}
+
+@media only screen and (min-width: 768px) {
+  .logo-container {
+    display: inline-block;
+    max-width: 264px;
+    margin-right: 24px;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .logo-container {
+    margin-right: 120px;
+  }
 }
 
 /* Social media */
 
 .media-container {
-  margin-right: 80px;
+  margin-bottom: 72px;
+}
+
+@media only screen and (min-width: 1158px) {
+  .media-container {
+    margin-right: 80px;
+  }
 }
 
 .media-text {
+  text-align: center;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -311,6 +359,19 @@ img {
 
   margin-bottom: 16px;
 }
+
+@media only screen and (min-width: 768px) {
+  .media-text {
+    text-align: start;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .media-container {
+    margin-right: 80px;
+  }
+}
+
 .media-list {
   display: flex;
   gap: 16px;
@@ -342,14 +403,35 @@ img {
 
 /* Subscribe form */
 
-.subscr-form {
-  margin-left: auto;
+@media only screen and (min-width: 1158px) {
+  .subscr-form {
+    margin-left: auto;
+  }
 }
+
 .subscribe-box {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 16px;
+}
+
+@media only screen and (min-width: 768px) {
+  .subscribe-box {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .subscribe-box {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
 }
 .subscr-label {
   display: block;
+  text-align: center;
   margin-bottom: 16px;
 
   font-weight: 500;
@@ -358,9 +440,16 @@ img {
   letter-spacing: 0.02em;
   color: var(--color-white);
 }
+
+@media only screen and (min-width: 768px) {
+  .subscr-label {
+    text-align: start;
+  }
+}
+
 .subscr-input {
   display: block;
-  width: 264px;
+  width: 100%;
   height: 40px;
   padding: 8px 16px;
 
@@ -374,9 +463,18 @@ img {
   border: 1px solid var(--color-white);
   border-radius: 4px;
 
-  margin-right: 24px;
   background-color: var(--color-navy-blue);
 }
+
+@media only screen and (min-width: 768px) {
+  .subscr-input {
+    display: block;
+    width: 264px;
+
+    margin-right: 24px;
+  }
+}
+
 .subscr-input::placeholder {
   font-weight: 400;
   font-size: 12px;
