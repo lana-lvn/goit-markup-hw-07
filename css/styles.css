@@ -272,7 +272,7 @@ img {
 /* Subscribe form */
 
 .subscr-form {
-  width: 453px;
+  margin-left: auto;
 }
 .subscribe-box {
   display: flex;
@@ -442,8 +442,8 @@ img {
   transform: translate(-50%, -50%) scale(1);
 
   width: 408px;
-  min-height: 576px;
-  padding: 72px 24px 24px 24px;
+
+  padding: 72px 24px 24px;
 
   background-color: var(--color-dairy);
   border-radius: 4px;
@@ -499,8 +499,7 @@ img {
 }
 
 /* MODAL FORM */
-.modal-form {
-}
+
 .modal-title {
   display: block;
   text-align: center;
@@ -642,18 +641,14 @@ img {
   color: var(--color-iris);
 }
 .modal-form-btn {
-  display: flex;
+  display: block;
   margin-right: auto;
   margin-left: auto;
 
   width: 169px;
   height: 56px;
 
-  align-items: center;
-  justify-content: center;
-
   font-family: inherit;
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
