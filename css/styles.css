@@ -1262,16 +1262,44 @@ img {
 */
 
 /* FILTERS */
+
 .portfolio {
-  padding-top: 96px;
-  padding-bottom: 120px;
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
+
+@media only screen and (min-width: 768px) {
+  .portfolio {
+    padding-top: 64px;
+    padding-bottom: 96px;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .portfolio {
+    padding-top: 96px;
+    padding-bottom: 120px;
+  }
+}
+
 .filters {
   display: flex;
   justify-content: center;
-  gap: 24px;
+  column-gap: 24px;
+  row-gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
 
-  margin-bottom: 72px;
+@media only screen and (min-width: 768px) {
+  .filters {
+    margin-bottom: 64px;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .filters {
+    margin-bottom: 72px;
+  }
 }
 
 .filter-btn {
@@ -1309,18 +1337,36 @@ img {
 }
 
 /* CARD SET */
-
 .projects {
   display: flex;
   flex-wrap: wrap;
-
-  column-gap: 24px;
   row-gap: 48px;
 }
 
 .project-item {
-  flex-basis: calc((100% - 2 * 24px) / 3);
-  width: calc((100% - 48px) / 3);
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .projects {
+    column-gap: 24px;
+    row-gap: 72px;
+  }
+
+  .project-item {
+    flex-basis: calc((100% - 1 * 24px) / 2);
+    width: calc((100% - 24px) / 2);
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .projects {
+    row-gap: 48px;
+  }
+  .project-item {
+    flex-basis: calc((100% - 2 * 24px) / 3);
+    width: calc((100% - 48px) / 3);
+  }
 }
 
 .card-title {
